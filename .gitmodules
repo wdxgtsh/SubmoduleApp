@@ -1,0 +1,6 @@
+[submodule "SubmoduleLogin"]
+	path = SubmoduleLogin
+	url = git@github.com:wdxgtsh/SubmoduleLogin.git
+[submodule "SubmoduleNetWork"]
+	path = SubmoduleNetWork
+	url = git@github.com:wdxgtsh/SubmoduleNetWork.git
