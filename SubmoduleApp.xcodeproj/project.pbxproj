@@ -15,6 +15,8 @@
 		180B2DE21C909630007B4518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180B2DE01C909630007B4518 /* LaunchScreen.storyboard */; };
 		180B2DED1C909630007B4518 /* SubmoduleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B2DEC1C909630007B4518 /* SubmoduleAppTests.m */; };
 		180B2DF81C909630007B4518 /* SubmoduleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B2DF71C909630007B4518 /* SubmoduleAppUITests.m */; };
+		18681F2D1C93114B00054250 /* libSubmoduleLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18681F2B1C93114B00054250 /* libSubmoduleLogin.a */; };
+		18681F2E1C93114B00054250 /* libSubmoduleNetWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18681F2C1C93114B00054250 /* libSubmoduleNetWork.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		180B2DF31C909630007B4518 /* SubmoduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubmoduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180B2DF71C909630007B4518 /* SubmoduleAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubmoduleAppUITests.m; sourceTree = "<group>"; };
 		180B2DF91C909630007B4518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18681F2B1C93114B00054250 /* libSubmoduleLogin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSubmoduleLogin.a; path = "SubmoduleLogin/build/Debug-iphoneos/libSubmoduleLogin.a"; sourceTree = "<group>"; };
+		18681F2C1C93114B00054250 /* libSubmoduleNetWork.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSubmoduleNetWork.a; path = "SubmoduleNetWork/build/Debug-iphoneos/libSubmoduleNetWork.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18681F2D1C93114B00054250 /* libSubmoduleLogin.a in Frameworks */,
+				18681F2E1C93114B00054250 /* libSubmoduleNetWork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 		180B2DC61C909630007B4518 = {
 			isa = PBXGroup;
 			children = (
+				18681F2F1C93119800054250 /* lib */,
 				180B2DD11C909630007B4518 /* SubmoduleApp */,
 				180B2DEB1C909630007B4518 /* SubmoduleAppTests */,
 				180B2DF61C909630007B4518 /* SubmoduleAppUITests */,
@@ -138,6 +145,15 @@
 				180B2DF91C909630007B4518 /* Info.plist */,
 			);
 			path = SubmoduleAppUITests;
+			sourceTree = "<group>";
+		};
+		18681F2F1C93119800054250 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				18681F2B1C93114B00054250 /* libSubmoduleLogin.a */,
+				18681F2C1C93114B00054250 /* libSubmoduleNetWork.a */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,10 +427,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/SubmoduleLogin",
+					"$(SRCROOT)/SubmoduleNetWork",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = SubmoduleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SubmoduleLogin/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/SubmoduleNetWork/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "zhaolei-dubai-163.com.SubmoduleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
@@ -422,10 +449,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/SubmoduleLogin",
+					"$(SRCROOT)/SubmoduleNetWork",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = SubmoduleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SubmoduleLogin/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/SubmoduleNetWork/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "zhaolei-dubai-163.com.SubmoduleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};
@@ -496,6 +534,7 @@
 				180B2DFE1C909630007B4518 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180B2DFF1C909630007B4518 /* Build configuration list for PBXNativeTarget "SubmoduleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +543,7 @@
 				180B2E011C909630007B4518 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180B2E021C909630007B4518 /* Build configuration list for PBXNativeTarget "SubmoduleAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +552,7 @@
 				180B2E041C909630007B4518 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
